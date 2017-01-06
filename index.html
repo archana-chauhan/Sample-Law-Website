@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Vsa Law Associates</title>
+		<meta name="description" content="SlidesJS is a simple slideshow plugin for jQuery. Packed with a useful set of features to help novice and advanced developers alike create elegant and user-friendly slideshows.">
+  <meta name="author" content="Nathan Searles">
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		
+		<meta name="viewport" content="width=device-width">
+		
+
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-xlarge.css" />
+			<link rel="stylesheet" href="css/example.css"/>
+  <link rel="stylesheet" href="css/font-awesome.min1.css"/>
+  <link rel="stylesheet" type="text/css" href="reset-min.css"/>
+<link href="woff.css" rel="stylesheet" type="text/css"/>
+	<link href="tabulous.css" rel="stylesheet" type="text/css"/>
+		</noscript>
+	
+	<!-- CSS for slidesjs.com example -->
+  
+  <!-- End CSS for slidesjs.com example -->
+	
+	
+	<style>
+    body {
+      -webkit-font-smoothing: antialiased;
+      font: normal 15px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+      color: #232525;
+ 
+    }
+
+    #slides {
+	
+		border: 0;
+		display: inline;
+		position: absolute;
+		
+		float: left;
+			
+			width:100%;
+			
+			
+			padding: 0 0 6em 0;
+			margin:auto;
+			left:0;
+    }
+
+    #slides.slidesjs-navigation {
+      margin-top:5px;
+    }
+
+    a.slidesjs-next,
+    a.slidesjs-previous,
+    a.slidesjs-play,
+    a.slidesjs-stop {
+      background-image: url(img/btns-next-prev.png);
+      background-repeat: no-repeat;
+      display:block;
+     width:12px;
+      height:18px; 
+      overflow: hidden;
+      text-indent: -9999px;
+      float: left;
+      margin-right:5px;
+    }
+
+    a.slidesjs-next {
+      margin-right:10px;
+      background-position: -12px 0;
+    }
+
+    a:hover.slidesjs-next {
+      background-position: -12px -18px;
+    }
+
+    a.slidesjs-previous {
+      background-position: 0 0;
+    }
+
+    a:hover.slidesjs-previous {
+      background-position: 0 -18px;
+    }
+
+    a.slidesjs-play {
+      width:15px;
+      background-position: -25px 0;
+    }
+
+    a:hover.slidesjs-play {
+      background-position: -25px -18px;
+    }
+
+    a.slidesjs-stop {
+      width:18px;
+      background-position: -41px 0;
+    }
+
+    a:hover.slidesjs-stop {
+      background-position: -41px -18px;
+    }
+
+    .slidesjs-pagination {
+      margin: 7px 0 0;
+      float: right;
+      list-style: none;
+    }
+
+    .slidesjs-pagination li {
+      float: left;
+      margin: 0 1px;
+    }
+
+    .slidesjs-pagination li a {
+      display: block;
+      width: 13px;
+      height: 0;
+      padding-top: 13px;
+      background-image: url(img/pagination.png);
+      background-position: 0 0;
+      float: left;
+      overflow: hidden;
+    }
+
+    .slidesjs-pagination li a.active,
+    .slidesjs-pagination li a:hover.active {
+      background-position: 0 -13px
+    }
+
+    .slidesjs-pagination li a:hover {
+      background-position: 0 -26px
+    }
+
+    #slides a:link,
+    #slides a:visited {
+      color: #333
+    }
+
+    #slides a:hover,
+    #slides a:active {
+      color: #9e2020
+    }
+
+    .navbar {
+      overflow: hidden
+    }
+  </style>
+  <!-- End SlidesJS Optional-->
+
+  <!-- SlidesJS Required: These styles are required if you'd like a responsive slideshow -->
+  <style>
+  <!--  #slides {
+      display: none;
+	  
+    }			-->
+
+    .container {
+      margin: 0 auto
+    }
+
+   <!-- /* For tablets & smart phones */			-->
+    @media (max-width: 767px) {
+      body {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      .container {
+        width: auto
+      }
+    }
+
+   <!-- /* For smartphones */		-->
+    @media (max-width: 480px) {
+      .container {
+        width: auto
+      }
+    }
+
+  <!--  /* For smaller displays like laptops */			-->
+    @media (min-width: 768px) and (max-width: 979px) {
+      .container {
+        width: 724px
+      }
+    }
+
+ <!--   /* For larger displays */				-->
+    @media (min-width: 1200px) {
+      .container {
+        width: 1170px
+      }
+    }
+  </style>
+  <!-- SlidesJS Required: -->
+	
+	
+	</head>
+	
+	<body class="landing">
+	
+	
+	
+
+		<!-- Header -->
+		<!--	<header id="header">
+				<h1><a href="index.html">LAW OF ASSOCIATION</a></h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="#">Our Services</a></li>
+						<li><a href="#">Area of Practice</a></li>
+						<li><a href="#" class="button special">Contact Us</a></li>
+					</ul>
+				</nav>
+				<!-- <span><i class="glyphicon glyphicon-search"></i></span>
+				<input type="search">Search Here</input>
+			</header>   -->
+			
+			<div id="wrapper">
+
+		
+
+
+	<div id="tabs3">
+		<ul>
+			<li><a href="#tabs-1">Home</a></li>
+			<li><a href="#tabs-2">Our Services</a></li>
+			<li><a href="#tabs-3">Area of Practice</a></li>
+			<li><a href="#tabs-4">Contact Us</a></li>
+		</ul>
+
+		<style>
+		.tab-img-1
+		{
+			width:100%;
+			height:400px;
+		}
+		#tabs_container{
+			width:100%;
+			z-index:9999;
+			color:#336633;
+			/*
+			#000 - black;
+			#FFF - white;
+			*/
+		}
+		</style>
+		<div id="tabs_container">
+			
+
+			<div id="tabs-1">
+				
+			</div>
+
+			<div id="tabs-2">
+				    <p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Duis scelerisque molestie turpis. Sed fringilla, massa eget luctus malesuada, metus eros molestie lectus, ut tempus eros massa ut dolor.</p>
+		
+			</div>
+
+			<div id="tabs-3">
+				    <p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem.</p><p> Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales.</p>
+			</div>
+			
+			<div id="tabs-4">
+				    <p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem.</p><p> Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales.</p>
+			</div>
+			
+
+		</div><!--End tabs container-->
+		
+	</div><!--End tabs-->
+
+
+
+	
+
+		
+	</div>
+			
+			
+			
+			<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="tabulous.js"></script>
+<script type="text/javascript" src="js.js"></script>
+
+
+	 <!-- The container is used to define the width of the slideshow -->
+  <div class="container">
+    <div id="slides">
+      <img src="images/white1.jpg" width="990" height="500"/>
+      <img src="images/white2.jpg" width="990" height="500"/>
+      <img src="images/white3.jpg" width="990" height="500"/>
+      <img src="images/slide4.png" width="990" height="500"/>
+    </div>
+  </div>
+  <!-- End SlidesJS Required: Start Slides -->
+
+  <!-- SlidesJS Required: Link to jQuery -->
+  <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+  <!-- End SlidesJS Required -->
+
+  <!-- SlidesJS Required: Link to jquery.slides.js -->
+  <script src="js/jquery.slides.min.js"></script>
+  <!-- End SlidesJS Required -->
+
+  <!-- SlidesJS Required: Initialize SlidesJS with a jQuery doc ready -->
+  <script>
+    $(function() {
+      $('#slides').slidesjs({
+        width: 940,
+        height: 528,
+        play: {
+          active: true,
+          auto: true,
+          interval: 4000,
+          swap: true
+        }
+      });
+    });
+  </script>
+  <!-- End SlidesJS Required -->
+			
+		<!-- Banner -->
+			<section id="banner">
+				<h2>VSA LAW ASSOCIATES</h2>
+				
+				<ul class="actions">
+					<li>
+						<a href="#" class="button big">Click Here</a>
+					</li>
+				</ul>
+			</section>
+
+		<!-- One -->
+			<section id="one" class="wrapper style1 special">
+				<!--<div class="container">  -->
+					<header class="major">
+						<h2>Courts- Where We Practice</h2>
+						<p>Supreme Court of India,New Delhi</p>
+						<p>Company Law Board</p>
+						<p>Debt Recovery</p>
+						<p>Income tax and Sales tax Department</p>
+						<p>Delhi And Session Courts At Delhi</p>
+						<p>Company Law Board, New Delhi</p>
+
+					</header>
+					<div class="container">
+					<div class="row 150%">
+						<div class="4u 12u$(medium)">
+							<section class="box">
+								<i class="icon big rounded color1 fa-cloud"></i>
+								<h3>Family Law</h3>
+								<ul class="unstyled">
+								<li>Divorce (mutual consent divorce & contested divorce)</li>
+								<li>Dowry</li>
+								<li>Maintenance</li>
+								<li>Domestic violence</li>
+								<li>Separation</li>
+								<li>Child custody</li>
+								<li>Adoption</li>
+								<li>Nullity of marriage</li>
+								<li>Adultery</li>
+								<li>Transfer petition at supreme court</li>
+								</ul>
+								
+							</section>
+						</div>
+					
+						<div class="4u 12u$(medium)">
+							<section class="box">
+								<i class="icon big rounded color9 fa-desktop"></i>
+								<h3>Criminal Law</h3>
+								
+								<ul class="unstyled">
+								<li>Assault</li>
+								<li>Cheating</li>
+								<li>Murder</li>
+								<li>Rape</li>
+								<li>Theft</li>
+								<li>Passport act</li>
+								<li>Cheque dishonour cases</li>
+								<li>Food adultration act</li>
+								<li>Fraud / forgery</li>
+								<li>Perjury</li>
+								<li>E.s.i & e.p.f criminal prosecution matters</li>
+								
+								</ul>
+								
+								
+								
+							</section>
+						</div>
+						<div class="4u$ 12u$(medium)">
+							<section class="box">
+								<i class="icon big rounded color6 fa-rocket"></i>
+								<h3>Civil Law</h3>
+								
+								
+								<ul class="unstyled">
+								<li>Property litigation</li>
+								<li>Consumer protection act</li>
+								<li>Human rights</li>
+								<li>Rent matters</li>
+								<li>Arbitration & reconciliation act</li>
+								<li>All type of civil disputes</li>
+								<li>Specific performance</li>
+								<li>Suit for declaration</li>
+								</ul>
+								
+								
+							</section>
+						</div>
+					</div>
+				</div>
+			</section>
+
+		<!-- Two -->
+			<section id="two" class="wrapper style2 special">
+				<div class="container">
+					<header class="major">
+						<h2>We provide legal assistance and solutions</h2></header>
+						<p>Tyagi associates is practicing and providing legal assistance and solutions to clients in all areas of practice at Supreme Court of India, Delhi High Court & District & Session Court at Delhi & NCR.Our firm has been established with a vision to provide best Legal Service in various Session & District courts at Delhi & NCR ( Saket Distt Court ,Patiala House Court ,Tis Hazari Court , Dwarka Court, Faridabad & Palwal Distt. Court ,Gurgaon Court ,Noida ,& Ghaziabad,Sonipat ,Panipat & all over India.We provides Consultancy in .i.e Divorce cases ,Family disputes (498A ,Maintenance u/s 125 CRPC, Child Adoption) , Divorce Laws , Property Matters, Civil Matters, Consumer cases CRIMINAL CASES ( BAIL/ REGULAR BAIL/ ANTICIPATORY BAIL), Corporate Matters, Intellectual Property Right Laws, Real Estate Laws, Cyber Laws, Arbitration & Conciliation , International Commercial Arbitration , International Trade & Business Law, Drafting of Corporate Agreements/MOU/JV/Deeds etc. Registration and Incorporation Services Trademark, Copyright and Patent Laws .
+Our Firm also do Registration of Property, Will ,Trust & NGO.The firm is also provides Documentation i.e Registration of Property , N.G.O ,Society, Partnership Deed and also providing assistance in Will Drafting & Registration ,Court Marriage & Marriage Registration at Delhi,Faridabad,Gurgaon & Ghaziabad.
+</p>
+					
+					
+					
+					<section class="profiles">
+						<div class="row">
+					<!--		<section class="3u 6u(medium) 12u$(xsmall) profile">
+								<img src="images/profile_placeholder.gif" alt="" />
+								<h4>Lorem ipsum</h4>
+								<p>Lorem ipsum dolor</p>
+							</section>
+							<section class="3u 6u$(medium) 12u$(xsmall) profile">
+								<img src="images/profile_placeholder.gif" alt="" />
+								<h4>Voluptatem dolores</h4>
+								<p>Ullam nihil repudi</p>
+							</section>
+							<section class="3u 6u(medium) 12u$(xsmall) profile">
+								<img src="images/profile_placeholder.gif" alt="" />
+								<h4>Doloremque quo</h4>
+								<p>Harum corrupti quia</p>
+							</section>
+							<section class="3u$ 6u$(medium) 12u$(xsmall) profile">
+								<img src="images/profile_placeholder.gif" alt="" />
+								<h4>Voluptatem dicta</h4>
+								<p>Et natus sapiente</p>
+							</section>
+							
+							-->
+						</div>
+					</section>
+					
+					
+					
+					<!-- <footer>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam dolore illum, temporibus veritatis eligendi, aliquam, dolor enim itaque veniam aut eaque sequi qui quia vitae pariatur repudiandae ab dignissimos ex!</p>
+						<ul class="actions">
+							<li>
+								<a href="#" class="button big">Lorem ipsum dolor sit</a>
+							</li>
+						</ul>
+					</footer>
+					-->
+				</div>
+			</section>
+-->
+		<!-- Three -->
+			<section id="three" class="wrapper style3 special">
+				<div class="container">
+					<header class="major">
+						<h2>QUICK ENQUIRY</h2>
+						
+					</header>
+				</div>
+				<div class="container 50%">
+					<form action="#" method="post">
+						<div class="row uniform">
+							<div class="6u 12u$(small)">
+								<input name="name" id="name" value="" placeholder="Name" type="text">
+							</div>
+							<div class="6u$ 12u$(small)">
+								<input name="email" id="email" value="" placeholder="Email" type="email">
+							</div>
+							<div class="12u$">
+								<textarea name="message" id="message" placeholder="Message" rows="6"></textarea>
+							</div>
+							<div class="12u$">
+								<ul class="actions">
+									<li><input value="Send Message" class="special big" type="submit"></li>
+								</ul>
+							</div>
+						</div>
+					</form>
+				</div>
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<section class="links">
+						<div class="row">
+							<section class="3u 6u(medium) 12u$(small)">
+								<h3>Contact Us</h3>
+								<ul class="unstyled">
+									<li>VSA Associates</li>
+									<li>Mr. Ravinder Tyagi</li>
+									<li>Delhi Address</li>
+									<li>A 37, LGF(Basement), Amar Colony, Lagpat Nagar-IV,</li>
+									<li>Opp.Khalsa School, New Delhi</li>
+									<li>Faridabad Address</li>
+									<li>B-98, Nehru Ground, NIT Faridabad </li>
+									<li>Mobile: +91 9873324300 </li>
+									<li>Email: tyagi.associates@hotmail.com</li>
+									<li><a href="#">vsaassociates@gmail.com</li>
+								</ul>
+							</section>
+							<section class="3u 6u$(medium) 12u$(small)">
+								<h3>Our Services</h3>
+								<ul class="unstyled">
+									<li><a href="#">Family Law</a></li>
+									<li><a href="#">Criminal Law</a></li>
+									<li><a href="#">Civil Law</a></li>
+									<li><a href="#">Litigations</a></li>
+									<li><a href="#">Legal Documentation</a></li>
+									<li><a href="#">Corporate Law</a></li>
+								</ul>
+							</section>
+							<section class="3u 6u$(medium) 12u$(small) last">
+								<h3>Disclaimer</h3>
+								
+							<p>This website is a public resource for general information about the material on our Website has been prepared and published for general information only. <br/>
+							The information contained in this web site is provided by Associates as general information which may or may not reflect the most current legal developments. <br/> Moreover, Tyagi Associates doesn't give any guarantees, undertaking or warranties concerning the accuracy, completeness or up-to-date nature of the information provided on this website.
+							</p>
+							</section>
+							<!--	<ul class="unstyled">
+									<li><a href="#">Lorem ipsum dolor sit</a></li>
+									<li><a href="#">Distinctio, inventore quidem nesciunt</a></li>
+									<li><a href="#">Explicabo inventore itaque autem</a></li>
+									<li><a href="#">Aperiam harum, sint quibusdam</a></li>
+									<li><a href="#">Labore excepturi assumenda</a></li>
+								</ul>
+								
+							-->
+						
+							
+							<!--
+							<section class="3u$ 6u$(medium) 12u$(small)">
+								<h3>Illum, tempori, saepe</h3>
+								<ul class="unstyled">
+									<li><a href="#">Lorem ipsum dolor sit</a></li>
+									<li><a href="#">Recusandae, culpa necessita nam</a></li>
+									<li><a href="#">Cupiditate, debitis adipisci blandi</a></li>
+									<li><a href="#">Tempore nam, enim quia</a></li>
+									<li><a href="#">Explicabo molestiae dolor labore</a></li>
+								</ul>
+							</section>
+							-->
+						</div>
+					</section>
+					
+					
+					<div class="row">
+						<div class="8u 12u$(medium)">
+							<ul class="copyright">
+								<li>&copy; VSA LAW ASSOCIATES All rights reserved.</li>
+							<li>Design by: <a href="#">Archana Chauhan</a></li>   
+								
+							</ul>
+						</div>
+						<div class="4u$ 12u$(medium)">
+							<ul class="icons">
+								<li>
+									<a class="icon rounded fa-facebook"><span class="label">Facebook</span></a>
+								</li>
+								<li>
+									<a class="icon rounded fa-twitter"><span class="label">Twitter</span></a>
+								</li>
+								<li>
+									<a class="icon rounded fa-google-plus"><span class="label">Google+</span></a>
+								</li>
+								<li>
+									<a class="icon rounded fa-linkedin"><span class="label">LinkedIn</span></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</footer>
+
+	</body>
+</html>
